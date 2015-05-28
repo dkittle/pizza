@@ -8,7 +8,6 @@ scalacOptions ++= Seq(
   "-deprecation",
   "-feature",
   "-language:reflectiveCalls",
-  "-language:postfixOps",
   "-Xlint",
   "-Xfatal-warnings"
 )
