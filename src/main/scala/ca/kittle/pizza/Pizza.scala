@@ -9,30 +9,31 @@ import ca.kittle.pizza.Topping._
  */
 case class Pizza(size: Size, base: Base, toppings: List[Topping]) {
 
+  def ofSize(size: Size) = {
+    this.copy(size = size)
+  }
+
+  def withBase(base: Base) = {
+    this.copy(base = base)
+  }
+
+  def withTopping(ingredient: Topping) = {
+    this.copy(toppings = ingredient :: toppings)
+  }
+
 }
 
 object Pizza {
 
-  def pie(): PizzaOrder = PizzaOrder()
+  def apply(): Pizza = new Pizza(Small, TomatoSauce, List[Topping]())
 
-  case class PizzaOrder(size: Size = Small, base: Base = TomatoSauce, toppings: List[Topping] = List[Topping]()) {
-
-    def ofSize(size: Size) = {
-      this.copy(size = size)
-    }
-
-    def withBase(base: Base) = {
-      this.copy(base = base)
-    }
-
-    def withTopping(ingredient: Topping) = {
-      this.copy(toppings = ingredient :: toppings)
-    }
-
-    def placeOrder(): Pizza = {
-      new Pizza(size = size, base = base, toppings = toppings)
-    }
-
-  }
+//  case class PizzaOrder(size: Size = Small, base: Base = TomatoSauce, toppings: List[Topping] = List[Topping]()) {
+//
+//
+//    def placeOrder(): Pizza = {
+//      new Pizza(size = size, base = base, toppings = toppings)
+//    }
+//
+//  }
 
 }
