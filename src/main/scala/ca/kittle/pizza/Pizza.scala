@@ -27,13 +27,4 @@ object Pizza {
 
   def apply(): Pizza = new Pizza(Small, TomatoSauce, List[Topping]())
 
-//  case class PizzaOrder(size: Size = Small, base: Base = TomatoSauce, toppings: List[Topping] = List[Topping]()) {
-//
-//
-//    def placeOrder(): Pizza = {
-//      new Pizza(size = size, base = base, toppings = toppings)
-//    }
-//
-//  }
-
 }
